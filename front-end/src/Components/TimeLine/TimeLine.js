@@ -8,7 +8,7 @@ const Styled = {
         border-left: 1px rgba(255,255,255, 0.2) solid;
         border-right: 1px rgba(255,255,255, 0.2) solid;
 
-        & > header {
+        & > * {
             padding: 10px 20px;
             border-bottom: 1px rgba(255,255,255, 0.2) solid;
         }
