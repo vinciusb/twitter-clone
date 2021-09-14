@@ -12,10 +12,11 @@ const Styled = {
         & .user-photo {
             width: 48px;
             height: 48px;
+            min-width: 48px;
+            min-height: 48px;
             border-radius: 50%;
             background-color: rgb(0,155,155);
             margin-right: 15px;
-            box-sizing: content-box;
         }
         & .edit-tweet {
             width: 100%;
@@ -31,9 +32,16 @@ function MakeTweet() {
     const dispatch = useDispatch();
 
     const handleTweetPublication = () => {
-        dispatch(publishTweet(
-            { name: 'Vinícius Braga Freire', color: 'rgb(0,155,155)' }, text,
-        ));
+        if(text !== '') {
+            dispatch(publishTweet(
+                {
+                    name: 'Vinícius Braga Freire',
+                    at: 'vinciusb',
+                    color: 'rgb(0,155,155)',
+                }, text,
+            ));
+            setText('');
+        }
     };
 
     return (

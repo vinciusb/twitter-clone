@@ -1,30 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 import styled from 'styled-components';
-import SidebarOptions from '../SidebarOptions/SidebarOptions';
 import TimeLine from '../TimeLine/TimeLine';
-import SidebarInfos from '../SidebarInfos/SidebarInfos';
+import Sidebars from '../Sidebars/Sidebars';
 
 const Styled = {
     MainPage: styled.div`
-        background-color: rgb(21,32,43);
         color: rgb(250,250,250);
         width: 100%;
         height: 100%;
         font-family: Roboto, Arial, Helvetica, sans-serif;
         font-size: 24px;
 
-        display: grid;
-        grid-template-columns: 1fr 600px 1fr;
-        grid-gap: 30px;
+        display: flex;
+        justify-content: center;
+
+        & .logo {
+            fill: rgb(255,255,255);
+            width: 24px;
+            margin-left: 15px;
+        }
     `,
 };
 
 function App() {
     return (
         <Styled.MainPage>
-            <SidebarOptions />
+            <Sidebars />
             <TimeLine />
-            <SidebarInfos />
         </Styled.MainPage>
     );
 }
