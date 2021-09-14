@@ -20,6 +20,7 @@ const Styled = {
         justify-self: end;
         background-color: rgb(21,32,43);
         font-size: 0.9em;
+        width: 250px;
 
         display: flex;
         flex-flow: column;
@@ -28,20 +29,19 @@ const Styled = {
         & .configs > * {
             margin-bottom: 5px;
         }
-
-        & .logo {
-            fill: rgb(255,255,255);
-            width: 24px;
-            margin-right: 15px;
+        & .configs .logo {
+            margin-left: 0;
+            margin-right: 20px;
         }
         & header {
             padding: 10px;
         }
         & header > .logo {
-            width: 29px;
+            width: 34px;
         }
-        & TweetButton {
-            margin-top: 20px;
+        & .configs div:last-child {
+            margin-top: 30px;
+            padding: 15px;
         }
     `,
 };
@@ -76,7 +76,7 @@ function SidebarOptions() {
                     </svg>
                 </header>
                 {renderButtons()}
-                <TweetButton />
+                <TweetButton onClick={() => {}} enabled />
             </div>
             <div className="accounts">
                 OI

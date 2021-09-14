@@ -16,8 +16,9 @@ const Styled = {
 
         & .logo {
             fill: rgb(255,255,255);
-            width: 24px;
+            width: 28px;
             margin-left: 15px;
+            box-sizing: border-box;
         }
     `,
 };

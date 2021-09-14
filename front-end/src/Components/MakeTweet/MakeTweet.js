@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import { publishTweet } from '../../Store/timeline/timeline.actions';
 import AutoTextarea from '../AutoTextarea/AutoTextarea';
 import TweetButton from '../TweetButton/TweetButton';
+import logos from './logos/logos';
 
 const Styled = {
     MakeTweet: styled.div`
@@ -23,6 +24,22 @@ const Styled = {
 
             /* display: grid;
             grid-template-rows: auto; */
+        }
+        & .publish {
+            display: grid;
+            grid-template-columns: 30% 1fr 20%;
+            grid-gap: 50%;
+        }
+        & .publish .extra {
+            display: flex;
+            justify-content: space-between;
+        }
+        & .make-logo {
+            width: 24px;
+            fill: rgb(29, 155, 240);
+        }
+        & .make-logo:hover {
+            cursor: pointer;
         }
     `,
 };
@@ -52,9 +69,17 @@ function MakeTweet() {
                     value={text}
                     onChange={(t) => setText(t)}
                 />
-                <div className="">
+                <div className="publish">
+                    <div className="extra">
+                        { logos.picture}
+                        { logos.gif}
+                        { logos.survey}
+                        { logos.emoji}
+                        { logos.calendar}
+                    </div>
                     <TweetButton
                         onClick={handleTweetPublication}
+                        enabled={text !== ''}
                     />
                 </div>
             </div>
