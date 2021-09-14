@@ -1,6 +1,6 @@
-export function publishTweet(tweetInfos) {
+export function publishTweet(user, text) {
     return {
         type: 'PUBLISH',
-        payload: tweetInfos,
+        payload: { user, text },
     };
 }

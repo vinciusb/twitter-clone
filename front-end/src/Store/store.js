@@ -1,10 +1,11 @@
 import { createStore, combineReducers } from 'redux';
-import TimeLineReducer from './timeline/timeline.reducer';
+import TimelineReducer from './timeline/timeline.reducer';
 
 const rootReducer = combineReducers({
-    timeline: TimeLineReducer,
+    timeline: TimelineReducer,
 });
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer,
+    window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;

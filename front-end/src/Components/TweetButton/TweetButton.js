@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import PropTypes from 'prop-types';
 import { btStyle } from '../SidebarOptions/InfoButton/InfoButton';
 
 const ReStyled = styled(btStyle)`
@@ -12,12 +13,16 @@ const ReStyled = styled(btStyle)`
     }
 `;
 
-function TweetButton() {
+function TweetButton({ onClick }) {
     return (
-        <ReStyled onClick={() => {}}>
+        <ReStyled onClick={onClick}>
             Tweetar
         </ReStyled>
     );
 }
+
+TweetButton.propTypes = {
+    onClick: PropTypes.func.isRequired,
+};
 
 export default TweetButton;

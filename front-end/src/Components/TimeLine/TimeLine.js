@@ -2,11 +2,13 @@ import React from 'react';
 import { useSelector } from 'react-redux';
 import styled from 'styled-components';
 import MakeTweet from '../MakeTweet/MakeTweet';
+import Tweet from '../Tweet/Tweet';
 
 const Styled = {
     TimeLine: styled.div`
         border-left: 1px rgba(255,255,255, 0.2) solid;
         border-right: 1px rgba(255,255,255, 0.2) solid;
+        overflow-y: scroll;
 
         & > * {
             padding: 10px 20px;
@@ -21,8 +23,10 @@ function TimeLine() {
     function renderTweets(tts) {
         const list = [];
 
-        tts.forEach(() => {
-            list.push();
+        tts.forEach((tt) => {
+            list.push(<Tweet
+                ttData={tt}
+            />);
         });
 
         return list;

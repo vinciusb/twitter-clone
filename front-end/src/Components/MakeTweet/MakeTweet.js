@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import styled from 'styled-components';
+import { publishTweet } from '../../Store/timeline/timeline.actions';
 import AutoTextarea from '../AutoTextarea/AutoTextarea';
 import TweetButton from '../TweetButton/TweetButton';
 
@@ -26,6 +28,13 @@ const Styled = {
 
 function MakeTweet() {
     const [text, setText] = useState('');
+    const dispatch = useDispatch();
+
+    const handleTweetPublication = () => {
+        dispatch(publishTweet(
+            { name: 'Vinícius Braga Freire', color: 'rgb(0,155,155)' }, text,
+        ));
+    };
 
     return (
         <Styled.MakeTweet>
@@ -36,7 +45,9 @@ function MakeTweet() {
                     onChange={(t) => setText(t)}
                 />
                 <div className="">
-                    <TweetButton />
+                    <TweetButton
+                        onClick={handleTweetPublication}
+                    />
                 </div>
             </div>
 
