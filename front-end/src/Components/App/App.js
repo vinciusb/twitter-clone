@@ -14,11 +14,23 @@ const Styled = {
         display: flex;
         justify-content: center;
 
-        & .logo {
+        .logo {
             fill: rgb(255,255,255);
             width: 28px;
             margin-left: 15px;
             box-sizing: border-box;
+        }
+        .at-mark {
+            color: rgb(155,155,155);
+        }
+        .user-photo {
+            width: 48px;
+            height: 48px;
+            min-width: 48px;
+            min-height: 48px;
+            border-radius: 50%;
+            margin-right: 15px;
+            box-sizing: content-box;
         }
     `,
 };

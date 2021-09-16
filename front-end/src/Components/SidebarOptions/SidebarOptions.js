@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import TweetButton from '../TweetButton/TweetButton';
+import Accounts from './Accounts/Accounts';
 import { InfoButton } from './InfoButton/InfoButton';
 import logos from './Logos/logos';
 
@@ -43,6 +44,9 @@ const Styled = {
             margin-top: 30px;
             padding: 15px;
         }
+        & > div:last-child {
+            margin-bottom: 15px;
+        }
     `,
 };
 
@@ -78,9 +82,8 @@ function SidebarOptions() {
                 {renderButtons()}
                 <TweetButton onClick={() => {}} enabled />
             </div>
-            <div className="accounts">
-                OI
-            </div>
+            <Accounts />
+
         </Styled.SidebarOptions>
     );
 }
